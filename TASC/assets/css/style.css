@@ -10,7 +10,8 @@
 # General
 --------------------------------------------------------------*/
 body {
-  background: #f0f0f0;
+  /* background: #f0f0f0; */
+  background: rgb(249, 249, 249);
   color: #444;
   font-family: "Open Sans", sans-serif;
 }
@@ -335,7 +336,8 @@ h6 {
 }
 
 #hero .hero-content h2 {
-  color: #0c2e8a;
+  /* color: #0c2e8a; */
+  color: white;
   margin-bottom: 30px;
   font-size: 64px;
   font-weight: 700;
