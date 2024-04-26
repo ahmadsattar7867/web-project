@@ -1,8 +1,9 @@
 const express = require("express");
 const path = require("path");
 const fs = require('fs'); 
-const signinRoute = require("./Express/Routes/signin");
+const signinRoute = require("./Express/Controller/signin");
 const indexRoute = require("./Express/Routes/index");
+const signupRoute = require("./Express/Controller/signup");
 
 
 const app = express();
@@ -11,6 +12,7 @@ const port = 3000;
 
 
 //defining routes
+app.use('/signup', signupRoute);
 app.use('/signin', signinRoute);
 app.use('/index', indexRoute);
 

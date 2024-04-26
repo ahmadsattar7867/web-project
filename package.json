@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "exprss": "^0.0.1-security"
+  }
+}
