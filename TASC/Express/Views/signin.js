@@ -21,3 +21,31 @@ function showContactUs(){
 function showThankYou(){
   prism.style.transform = "translateZ(-100px) rotateX( 90deg)";
 }
+
+
+// functions to handle the forms data
+
+//signup form data
+const signupform = document.getElementById('signupForm');
+signupform.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // get values
+  const email = signupform.email.value;
+  const password = signupform.password.value;
+
+  console.log(email, password);
+});
+
+//signin form data
+const loginform = document.getElementById('loginForm');
+
+loginform.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // get values
+  const email = loginform.email.value;
+  const password = loginform.password.value;
+
+  console.log(email, password);
+});

@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const fs = require('fs'); 
+const fs = require('fs');
 const mongoose = require('mongoose');
 const authRoutes = require('./Express/Routes/authRoutes');
 const exp = require("constants");
@@ -11,7 +11,7 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 //Middleware
-app.use(express.json()  );
+app.use(express.json());
 
 //setting up view engine
 app.set('view engine', 'ejs');
@@ -24,9 +24,6 @@ mongoose.connect(dbURI)
   .catch((err) => console.log(err));
 
 
-//defining routes
-app.use(authRoutes);
-
 
 // to serve main css file
 app.use(express.static(path.join(__dirname, '', '')));
@@ -34,6 +31,37 @@ app.use(express.static(path.join(__dirname, '', '')));
 app.use(express.static(path.join(__dirname, 'Express', 'views')));
 // app.use(express.static('public'));
 
+
+//defining routes
+app.use(authRoutes);
+
+
+// cookies
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+app.get('/set-cookies', (req, res) => {
+
+  // res.setHeader('Set-Cookie', 'newUser=true');
+  
+  res.cookie('newUser', false);
+  res.cookie('isEmployee', true, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true });
+
+  res.send('you got the cookies!');
+
+});
+
+app.get('/read-cookies', (req, res) => {
+
+  const cookies = req.cookies;
+  console.log(cookies.newUser);
+
+  res.json(cookies);
+
+});
+
+
+
 app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Server running at http://${hostname}:${port}/`);
 });

@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "decrypt": "^0.0.1",
     "ejs": "^3.1.10",
     "exprss": "^0.0.1-security",
     "validator": "^13.11.0"
