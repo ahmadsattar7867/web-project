@@ -6,6 +6,7 @@
     "decrypt": "^0.0.1",
     "ejs": "^3.1.10",
     "exprss": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
     "validator": "^13.11.0"
   }
 }

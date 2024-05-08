@@ -25,27 +25,41 @@ function showThankYou(){
 
 // functions to handle the forms data
 
-//signup form data
-const signupform = document.getElementById('signupForm');
-signupform.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  // get values
-  const email = signupform.email.value;
-  const password = signupform.password.value;
-
-  console.log(email, password);
-});
-
 //signin form data
 const loginform = document.getElementById('loginForm');
+const emailError2 = document.querySelector('.email.error');
+const passwordError2 = document.querySelector('.password.error');
 
-loginform.addEventListener('submit', (e) => {
+
+loginform.addEventListener('submit', async (e) => {
   e.preventDefault();
+
+  // reset errors
+  emailError2.textContent = '';
+  passwordError2.textContent = '';
 
   // get values
   const email = loginform.email.value;
   const password = loginform.password.value;
 
-  console.log(email, password);
+  try {
+    const res = await fetch('/login', { 
+      method: 'POST', 
+      body: JSON.stringify({ email, password }),
+      headers: {'Content-Type': 'application/json'}
+    });
+    const data = await res.json();
+    console.log(data);
+    if (data.errors) {
+      emailError2.textContent = data.errors.email;
+      passwordError2.textContent = data.errors.password;
+    }
+    if (data.user) {
+      location.assign('/login');
+    }
+
+  }
+  catch (err) {
+    console.log(err);
+  }
 });

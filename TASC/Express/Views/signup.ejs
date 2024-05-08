@@ -6,43 +6,47 @@
                 <!-- <li><a onclick="showLog1in()" href="/signin" >Login</a></li> -->
             </ul>
             <div class="wrapper">
-                <div class="face face-top">
-                    <div class="content">
-                        <h2>Verify Your Account</h2>
-                        <small>Please enter the 3 digits code sent to your email after you signup</small>
-                        <form onsubmit="event.preventDefault()">
-                            <div class="field-wrapper">
-                                <input type="text" name="email" placeholder="email">
-                                <label>Enter the 3 digit code</label>
-                            </div>
-                            <div class="field-wrapper">
-                                <input type="submit" onclick="showThankYou()">
-                            </div>
-                        </form>
+                <div class="rec-prism">
+                    <div class="face face-top">
+                        <div class="content">
+                            <h2>Verify Your Account</h2>
+                            <small>Please enter the 3 digits code sent to your email after you signup</small>
+                            <form onsubmit="event.preventDefault()">
+                                <div class="field-wrapper">
+                                    <input type="text" name="email" placeholder="email">
+                                    <label>Enter the 3 digit code</label>
+                                </div>
+                                <div class="field-wrapper">
+                                    <button><a href="/signin">Submit</a></button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <div class="face face-front">
-                    <div class="content">
-                        <h2>Sign up</h2>
-                        <form id="signupForm" action="/signup" method="POST">
-                            <div class="field-wrapper">
-                                <input type="text" name="email" placeholder="email">
-                                <label>e-mail</label>
-                            </div>
-                            <div class="field-wrapper">
-                                <input type="password" name="password" placeholder="password"
-                                    autocomplete="new-password">
-                                <label>password</label>
-                            </div>
-                            <div class="field-wrapper">
-                                <input type="submit" onclick="showSubscribe()">
-                            </div>
-                            <span class="singin"><a href="/signin">Already a user? Sign in</a></span>
-                        </form>
+                    <div class="face face-front">
+                        <div class="content">
+                            <h2>Sign up</h2>
+                            <form id="signupForm" action="/login" method="POST">
+                                <div class="field-wrapper">
+                                    <input type="text" name="email" placeholder="email">                                  
+                                    <label>e-mail</label>
+                                    <div class="email error"></div>
+                                </div>
+                                <div class="field-wrapper">
+                                    <input type="password" name="password" placeholder="password"
+                                        autocomplete="new-password">
+                                    <label>password</label>
+                                    <div class="password error"></div>
+                                </div>
+                                <div class="field-wrapper">
+                                    <input type="submit" > <!--onclick="showSubscribe()" -->
+                                </div>
+                                <span class="singin"><a href="/signin">Already a user? Sign in</a></span>
+                            </form>
+                        </div>
                     </div>
-                </div>
 
-<!-- 
+                </div>
+                <!-- 
                 <div class="face face-bottom">
                     <div class="content">
                         <div class="thank-you-msg">
@@ -70,4 +74,5 @@
         </div>../
 
     </section><!-- End Hero -->
+    <script src="signup.js"></script>
     <%- include('partials/footer') %>
