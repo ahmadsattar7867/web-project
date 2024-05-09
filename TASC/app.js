@@ -4,7 +4,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const authRoutes = require('./Express/Routes/authRoutes');
 const exp = require("constants");
-const { requireAuth } = require('./Express/middleware/authMiddleware');
+const { checkUser } = require('./Express/middleware/authMiddleware');
 
 
 
@@ -40,7 +40,7 @@ app.use(cookieParser());
 
 //defining routes
 app.use(authRoutes);
-
+app.get('*', checkUser);
 
 
 app.listen(port, hostname, () => {

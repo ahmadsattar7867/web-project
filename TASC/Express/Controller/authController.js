@@ -1,24 +1,34 @@
 const User = require("../Models/user");
 const jwt = require('jsonwebtoken');
-
 const { requireAuth } = require('../middleware/authMiddleware');
 
 
 // controller actions
 module.exports.signup_get = (req, res) => {
-  res.render('signup');
+  res.render('signup', { user: req.usfoundUserer });
 }
 
 module.exports.login_get = (req, res) => {
   requireAuth(req, res, () => {
-    // If authenticated, render the login page
-    res.render('login');
+    res.render('login', { user: req.user });
 });
 };
 
 module.exports.signin_get = (req, res) => {
-  res.render('signin');
+  res.render('signin', { user: req.user });
 }
+
+module.exports.index_get = (req, res) => {
+  res.render('../../index', { user: req.user });
+
+}
+
+
+module.exports.logout_get = (req, res) => {
+  res.cookie('jwt', '', { maxAge: 1 });
+  res.redirect('/');
+}
+
 
 
 // handle errors
