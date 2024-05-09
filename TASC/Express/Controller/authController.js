@@ -5,21 +5,24 @@ const { requireAuth } = require('../middleware/authMiddleware');
 
 // controller actions
 module.exports.signup_get = (req, res) => {
-  res.render('signup', { user: req.usfoundUserer });
+  res.render('signup');
 }
 
 module.exports.login_get = (req, res) => {
   requireAuth(req, res, () => {
-    res.render('login', { user: req.user });
+    res.render('login');
+    console.log(req.user)
+
 });
 };
 
 module.exports.signin_get = (req, res) => {
-  res.render('signin', { user: req.user });
+  res.render('signin');
 }
 
 module.exports.index_get = (req, res) => {
-  res.render('../../index', { user: req.user });
+  res.render('../../index');
+  console.log(req.user)
 
 }
 

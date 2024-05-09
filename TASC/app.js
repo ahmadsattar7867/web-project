@@ -39,8 +39,8 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 //defining routes
+// app.get('*', checkUser);
 app.use(authRoutes);
-app.get('*', checkUser);
 
 
 app.listen(port, hostname, () => {
