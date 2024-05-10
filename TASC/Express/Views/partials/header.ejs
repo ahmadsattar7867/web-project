@@ -63,8 +63,6 @@
         <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 123 4567890</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
-        <!-- <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a> -->
         <% if (user) { %>
           <li>Welcome, <span style="font-size: 20px; font-weight: bold;"><%= user.email %></span></li>
           <li><a class="nav-link scrollto" id="logout" href="/logout">LOG OUT</a></li>
@@ -73,6 +71,8 @@
             <li><a href="/login">Log in</a></li>
             <li><a href="/signup" class="btn">Sign up</a></li>
             <% } %>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
       </div>
     </div>
   </section><!-- End Top Bar-->
