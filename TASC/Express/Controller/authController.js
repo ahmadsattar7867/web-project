@@ -11,7 +11,6 @@ module.exports.signup_get = (req, res) => {
 module.exports.login_get = (req, res) => {
   requireAuth(req, res, () => {
     res.render('login');
-    console.log(req.user)
 
 });
 };
@@ -22,8 +21,6 @@ module.exports.signin_get = (req, res) => {
 
 module.exports.index_get = (req, res) => {
   res.render('../../index');
-  console.log(req.user)
-
 }
 
 
@@ -109,3 +106,8 @@ module.exports.login_post = async (req, res) => {
   }
 
 }
+
+
+// module.exports.chatting = (req, res) => {
+//   res.render('index');
+// };

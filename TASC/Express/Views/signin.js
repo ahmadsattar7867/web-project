@@ -26,6 +26,7 @@ function showThankYou(){
 // functions to handle the forms data
 
 //signin form data
+
 const loginform = document.getElementById('loginForm');
 const emailError2 = document.querySelector('.email.error');
 const passwordError2 = document.querySelector('.password.error');
@@ -63,3 +64,26 @@ loginform.addEventListener('submit', async (e) => {
     console.log(err);
   }
 });
+
+
+// document.getElementById('emailForm').addEventListener('submit', async (event) => {
+//   event.preventDefault();
+//   const formData = new FormData(event.target);
+  
+//   try {
+//     const response = await fetch('/forgotPass', {
+//       method: 'POST',
+//       body: formData
+//     });
+//     if (response.ok) {
+//       const message = await response.text();
+//       // Show a popup indicating success
+//       alert(message);
+//     } else {
+//       throw new Error('Email sending failed');
+//     }
+//   } catch (error) {
+//     console.error('Error:', error);
+//     // Handle error
+//   }
+// });

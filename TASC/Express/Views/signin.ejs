@@ -54,13 +54,13 @@
             <div class="content">
               <h2>Forgot your password?</h2>
               <small>Enter your email so we can send you a reset link for your password</small>
-              <form onsubmit="event.preventDefault()">
+              <form id="emailForm" action="/forgotPass" method="POST">
                 <div class="field-wrapper">
-                  <input type="text" name="email" placeholder="email">
+                  <input type="text" name="email" id="emailInput" placeholder="email">
                   <label>e-mail</label>
                 </div>
                 <div class="field-wrapper">
-                  <input type="submit" onclick="showLogin()">
+                  <input type="submit">
                 </div>
               </form>
             </div>
