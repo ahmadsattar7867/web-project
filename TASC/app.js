@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'Express', 'views')));
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
-//defining routes
+//defining routess
 // app.get('*', checkUser);
 app.use(authRoutes);
 app.use(utilityRoutes);
@@ -44,13 +44,7 @@ app.use(utilityRoutes);
 
 
 
-
-
-
-
-
-
-  const server = app.listen(port, hostname, () => {
+app.listen(port, hostname, () => {
     console.log(`HTTP server running at http://${hostname}:${port}/`);
   });
 

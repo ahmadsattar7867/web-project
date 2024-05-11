@@ -108,6 +108,9 @@ module.exports.login_post = async (req, res) => {
 }
 
 
-// module.exports.chatting = (req, res) => {
-//   res.render('index');
-// };
+
+
+// Export your Express app for use in other files if needed
+module.exports.chatting = (req, res) => {
+  res.render('index');
+};
