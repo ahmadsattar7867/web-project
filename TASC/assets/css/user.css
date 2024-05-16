@@ -1,0 +1,40 @@
+/* Style for form container */
+.form-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style for form header */
+  .form-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for select input */
+  #emailSelect {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style for submit button */
+  [type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #aadfcf;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  [type="submit"]:hover {
+    background-color: #50d8af;
+  }
+  

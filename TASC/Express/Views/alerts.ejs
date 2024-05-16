@@ -1,0 +1,22 @@
+<%- include('partials/header'); -%>
+
+<div class="container">
+  <h1><b>Send Alert to all users</b></h1>
+  <form action="/sendalert" method="post">
+    <textarea name="message" rows="4" cols="50" placeholder="Enter your message here..."></textarea><br>
+    <button type="submit">Send</button>
+  </form>
+  
+  <% if (typeof message !== 'undefined') { %>
+    <p><%= message %></p>
+  <% } %>
+</div>
+
+<script>
+  // Redirect back to /alerts after 3 seconds
+  setTimeout(() => {
+    window.location.href = '/alerts';
+  }, 10000);
+</script>
+
+<%- include('partials/footer'); -%>

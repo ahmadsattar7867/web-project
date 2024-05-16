@@ -1,0 +1,17 @@
+<%- include('partials/header'); -%>
+
+<div class="form-container">
+  <h2 class="form-header">User Management</h2>
+
+  <form id="userform" action="/removeUser" method="POST">
+    <label for="emailSelect">Select Email:</label>
+    <select name="email" id="emailSelect" class="form-control">
+      <% users.forEach(email => { %>
+        <option value="<%= email %>"><%= email %></option>
+      <% }); %>
+    </select>
+    <button type="submit">Remove User</button>
+  </form>
+</div>
+
+<%- include('partials/footer'); -%>

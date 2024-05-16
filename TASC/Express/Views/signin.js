@@ -66,24 +66,32 @@ loginform.addEventListener('submit', async (e) => {
 });
 
 
-// document.getElementById('emailForm').addEventListener('submit', async (event) => {
-//   event.preventDefault();
-//   const formData = new FormData(event.target);
-  
-//   try {
-//     const response = await fetch('/forgotPass', {
-//       method: 'POST',
-//       body: formData
-//     });
-//     if (response.ok) {
-//       const message = await response.text();
-//       // Show a popup indicating success
-//       alert(message);
-//     } else {
-//       throw new Error('Email sending failed');
-//     }
-//   } catch (error) {
-//     console.error('Error:', error);
-//     // Handle error
-//   }
-// });
+
+const emailForm = document.getElementById('emailForm');
+emailForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // get values
+  const email = emailForm.email.value;
+
+  try {
+    const res = await fetch('/forgotPass', { 
+      method: 'POST', 
+      body: JSON.stringify({ email }),
+      headers: {'Content-Type': 'application/json'}
+    });
+    const data = await res.json();
+    console.log(data);
+    if (data.errors) {
+      emailError2.textContent = data.errors.email;
+      passwordError2.textContent = data.errors.password;
+    }
+    if (data.user) {
+      location.assign('/signin');
+    }
+
+  }
+  catch (err) {
+    console.log(err);
+  }
+});

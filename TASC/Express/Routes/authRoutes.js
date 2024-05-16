@@ -11,7 +11,6 @@ router.get('/login', checkUser, authController.login_get);
 router.post('/login',checkUser,  authController.login_post);
 router.get('/logout',checkUser,  authController.logout_get);
 router.get('/',checkUser,  authController.index_get);
-router.get('/chatting',checkUser,  authController.chatting);
 
 
 module.exports = router;

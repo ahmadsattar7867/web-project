@@ -1,0 +1,32 @@
+
+  h1 {
+    color: #0c2e8a;
+  }
+  
+  h3 {
+    color: #50d8af;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    color: #fff;
+    background-color: lightgray;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #50d8af;
+    border-color: #50d8af;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  

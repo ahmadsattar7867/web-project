@@ -1,10 +1,27 @@
 <%- include('partials/header'); -%>
 
-<h1>WELCOME TO THE TASC FORCE</h1>
-<h3>Click Below to Enter the Users chat</h3>
 
+<div class="container">
+   <h1> <b>WELCOME TO THE TASC FORCE</b> </h1>
+ 
+   <h3>Click Below to Enter the Users chat</h3>
+   <form action="/chatting">
+     <button type="submit" class="btn">Enter</button>
+   </form>
+ 
+   <h3>Click below to Enter the notification and Alert System</h3>
+   <form action="/alerts">
+     <button type="submit" class="btn">Enter</button>
+   </form>
 
-<form action="/chatting">
-   <h1> <input type="submit" value="Enter"></h1>
-</form>
+   <h3>Click below to Manage the current Users</h3>
+   <form action="/user">
+     <button type="submit" class="btn">Enter</button>
+   </form>
+
+   <h3>Click below to share files with users</h3>
+   <form action="/share">
+     <button type="submit" class="btn">Enter</button>
+   </form>
+ </div>
 <%- include('partials/footer'); -%>
