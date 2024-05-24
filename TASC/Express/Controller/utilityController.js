@@ -175,39 +175,39 @@ const storage = multer.diskStorage({
 
 // Controller for handling file uploads
 module.exports.upload = upload.single('file'), async (req, res) => {
-  // try {
-  //   console.log(req.body)
-  //   console.log(req.file)
-  //   // Check if a file was uploaded
-  //   if (!req.file) {
-  //     return res.status(400).send('No file uploaded');
-  //   }
+    console.log(req.body)
+    console.log(req.file)
+  try {
+    // Check if a file was uploaded
+    if (!req.file) {
+      return res.status(400).send('No file uploaded');
+    }
 
-  //   // File data
-  //   const fileData = {
-  //     path: req.file.path,
-  //     originalName: req.file.originalname
-  //   };
+    // File data
+    const fileData = {
+      path: req.file.path,
+      originalName: req.file.originalname
+    };
 
-  //   // Process other form data (e.g., password)
-  //   const { password } = req.body;
-  //   if (password !== null && password !== "") {
-  //     // Hash password using bcrypt
-  //     fileData.password = await bcrypt.hash(password, 10);
-  //   }
+    // Process other form data (e.g., password)
+    const { password } = req.body;
+    if (password !== null && password !== "") {
+      // Hash password using bcrypt
+      fileData.password = await bcrypt.hash(password, 10);
+    }
 
-  //   // Save file data to database or perform further processing
-  //   // For example, save the fileData to a MongoDB collection using Mongoose
-  //   // const file = await File.create(fileData);
+    // Save file data to database or perform further processing
+    // For example, save the fileData to a MongoDB collection using Mongoose
+    const file = await File.create(fileData);
 
-  //   // Sending a plain text response indicating success
-  //   res.send('File uploaded successfully');
+    // Sending a plain text response indicating success
+    res.send('File uploaded successfully');
 
-  // } catch (error) {
-  //   console.error(error);
-  //   res.status(500).send('Internal Server Error');
-  // }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 };
 
-app.get('/file/:id',handleDownload );
-app.post('/file/:id',handleDownload );
+// app.get('/file/:id',handleDownload );
+// app.post('/file/:id',handleDownload );

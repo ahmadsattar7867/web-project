@@ -11,7 +11,7 @@ router.get('/alerts',checkUser,  utilityController.alerts);
 router.get('/user', checkUser,  utilityController.user);
 router.post('/removeUser',checkUser,   utilityController.removeUser);
 router.get('/share',checkUser,   utilityController.share);
-router.post('/upload',checkUser,   utilityController.upload);
+router.post('/upload',   utilityController.upload);
 
 // router.get('/file/:id',handleDownload,   utilityController.files);
 // router.post('/file/:id',handleDownload,   utilityController.files);

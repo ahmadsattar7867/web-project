@@ -30,7 +30,6 @@ module.exports.logout_get = (req, res) => {
 }
 
 
-
 // handle errors
 const handleErrors = (err) => {
   console.log(err.message, err.code);
@@ -109,4 +108,8 @@ module.exports.login_post = async (req, res) => {
 
 
 
+// Export your Express app for use in other files if needed
+module.exports.chatting = (req, res) => {
+  res.render('index');
+};
 

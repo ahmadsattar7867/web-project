@@ -23,14 +23,10 @@ mongoose.connect(dbURI)
   .catch((err) => console.log(err));
 
 
-
 // to serve main css file
 app.use(express.static(path.join(__dirname, '', '')));
 //to serve the signin css file
 app.use(express.static(path.join(__dirname, 'Express', 'views')));
-// app.use(express.static('public'));
-// app.use(express.static(path.join(__dirname, 'Express', 'public')));
-
 
 // cookies
 const cookieParser = require('cookie-parser');
@@ -40,7 +36,6 @@ app.use(cookieParser());
 // app.get('*', checkUser);
 app.use(authRoutes);
 app.use(utilityRoutes);
-
 
 
 
